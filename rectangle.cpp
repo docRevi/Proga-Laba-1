@@ -1,6 +1,7 @@
 #include <iostream>
 #include <locale>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -25,14 +26,22 @@ int main() {
     }
     float a = lengths[1];
     float b = lengths[0];
+
+    if (a <= 0 || b <= 0) {
+        cout << "Ошибка! Стороны прямоугольника не могут быть отрицательными или равными нулю." << endl;
+        return 1;
+    }
+
     enum menu {
         perimeter = 1,
         area,
         diagonal
     };
+
     int choose;
     cout << "Выберите, что хотите вычислить: \n Периметр - 1 \n Площадь - 2 \n Диагональ - 3" << endl;
     cin >> choose;
+
     switch (choose) {
     case menu::perimeter: {
         float Per = Perimeter(a, b);
@@ -49,6 +58,10 @@ int main() {
         cout << "Диагональ равна: " << Diag << endl;
         break;
     }
-    };
+    default:
+        cout << "Некорректный выбор." << endl;
+        break;
+    }
+
     return 0;
 }
