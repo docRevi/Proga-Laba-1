@@ -34,6 +34,10 @@ int main() {
     int b = lengths[2];
     int c = lengths[1];
     int d = lengths[0];
+    if (a+b+c<d or a+c+d<b or a+d+b<c or b+c+d<a){
+        cout << "Трапеции с такими сторонами не существует" << endl;
+        return 0;
+    }
     enum menu {
         perimeter =1,
         square,
