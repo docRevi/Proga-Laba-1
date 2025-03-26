@@ -25,6 +25,10 @@ int main() {
     for (int i = 0; i < 4; i++) {
         cin >> lengths[i];
     }
+    if ((lengths[0] <= 0) or  (lengths[1] <= 0) or  (lengths[2] <= 0) or (lengths[3] <= 0)) {
+        cout << "Трапеции с такими сторонами не существует" << endl;
+        return 0;
+    }
     sort(begin(lengths), end(lengths));
     int a = lengths[3];
     int b = lengths[2];
