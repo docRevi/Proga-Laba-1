@@ -14,18 +14,19 @@ bool Ravnobedrenniy(double a, double b, double c) {
     return (a == b) or  (a == c)  or (b == c);
 }
 int main() {
+    setlocale(LC_ALL, "RU");
+    using namespace std;
     double a, b, c;
     // Ввод сторон треугольника
     cout << "Введите длины сторон треугольника (a, b, c): ";
     cin >> a >> b >> c;
-
     // Проверка на существование треугольника
     if (a + b > c && a + c > b && b + c > a) {
         // Вычисление и вывод периметра
         double perimeter = calculatePerimeter(a, b, c);
         cout << "Периметр треугольника: " << perimeter << endl;
         // Вычисление и вывод площади
-        double area = calculateArea(a, b, c);
+        double area = calculatePloshad(a, b, c);
         cout << "Площадь треугольника: " << area << endl;
         // Проверка на равнобедренность и вывод результата
         if (Ravnobedrenniy(a, b, c)) {
